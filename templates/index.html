@@ -96,7 +96,6 @@
         .chart-container {
             position: relative;
             height: 30vh;
-            /* width: 50%; */
         }
         .mb-4 {
             margin-bottom: 1.5rem;
@@ -104,10 +103,8 @@
         .row {
             display: flex;
             flex-direction: row;
-            /* flex-wrap: wrap; */
         }
         .column {
-            /* flex: 50%; */
             width: 50%;
             padding: 10px;
         }
@@ -123,8 +120,6 @@
                 <button class="btn btn-danger" onclick="closeSystem()">Close</button>
             </div>
             <div class="text-center mb-4">
-                <!-- <button class="btn btn-info" onclick="loadDistanceData()">Load Distance Data</button>
-                <button class="btn btn-info" onclick="loadPositionData()">Load Position Data</button> -->
             </div>
             <div class="text-center mb-4" id="statusMessage"></div>
             <div class="text-center mb-4 tresh">
@@ -188,8 +183,7 @@
                 fill: false
             }]
         };
-
-        // Initialize JustGage gauges
+    
         var distanceGauge, positionGauge;
         window.onload = function() {
             distanceGauge = new JustGage({
@@ -226,7 +220,7 @@
                 data: distanceData,
                 options: {
                     animation: {
-                        duration: 0 // Disable animation for real-time updates
+                        duration: 0
                     },
                     scales: {
                         x: {
@@ -280,7 +274,7 @@
                 data: positionData,
                 options: {
                     animation: {
-                        duration: 0 // Disable animation for real-time updates
+                        duration: 0 
                     },
                     scales: {
                         x: {
@@ -426,36 +420,6 @@
             distanceChart.update();
             positionChart.update();
         }
-
-        // function loadDistanceData() {
-        //     fetch('/json_data')
-        //         .then(response => response.json())
-        //         .then(data => {
-        //             clearData();
-        //             data.forEach(entry => {
-        //                 var time = new Date(entry.timestamp);
-        //                 distanceData.labels.push(time);
-        //                 distanceData.datasets[0].data.push(entry.distance);
-        //             });
-        //             distanceChart.update();
-        //         })
-        //         .catch(error => console.error('Error loading distance data:', error));
-        // }
-
-        // function loadPositionData() {
-        //     fetch('/json_data')
-        //         .then(response => response.json())
-        //         .then(data => {
-        //             clearData();
-        //             data.forEach(entry => {
-        //                 var time = new Date(entry.timestamp);
-        //                 positionData.labels.push(time);
-        //                 positionData.datasets[0].data.push(entry.position);
-        //             });
-        //             positionChart.update();
-        //         })
-        //         .catch(error => console.error('Error loading position data:', error));
-        // }
 
         function updateThresholdLabel(value) {
             document.getElementById('thresholdValue').innerText = value;

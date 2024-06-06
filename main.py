@@ -9,7 +9,6 @@ from threading import Thread, Lock
 app = Flask(__name__)
 socketio = SocketIO(app)
 
-# Configuration for MySQL
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = 'slovakia'
@@ -21,7 +20,6 @@ monitoring_thread = None
 monitoring_active = False
 lock = Lock()
 
-# File path for JSON data
 data_file = 'sensor_data.json'
 last_save_time = 0
 
