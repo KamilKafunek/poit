@@ -16,7 +16,6 @@
             font-family: Arial, sans-serif;
         }
         .container {
-            /* max-width: 1200px; */
             margin: 0 100px;
             padding: 20px;
         }
@@ -425,17 +424,7 @@
             document.getElementById('thresholdValue').innerText = value;
         }
 
-        function addDataToWindow(distance, position) {
-            var dataWindow = document.getElementById('dataWindow');
-            var timeNow = new Date();
-            var newEntry = document.createElement('p');
-            newEntry.innerText = `Time: ${timeNow.toLocaleTimeString()}, Distance: ${distance}, Position: ${position}`;
-            dataWindow.appendChild(newEntry);
-            while (dataWindow.childElementCount > 20) {
-                dataWindow.removeChild(dataWindow.firstChild);
-            }
-            dataWindow.scrollTop = dataWindow.scrollHeight;
-        }
+
     </script>
 </body>
 </html>
